@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import TreeItem
+from django.db.models import Q
+from functools import reduce
 
 # Create your views here.
 def index(request):
@@ -19,4 +21,6 @@ class SearchResultsView(ListView):
 def search_for_tree(keywords):
     if keywords == '':
         return []
-    return TreeItem.objects.filter(name__contains=keywords)
+    queries = [Q(name__contains=kw) for kw in keywords.split()]
+    query = reduce(lambda curr, new: curr | new, queries)
+    return TreeItem.objects.filter(query)
