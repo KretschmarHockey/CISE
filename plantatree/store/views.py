@@ -5,9 +5,6 @@ from django.db.models import Q
 from functools import reduce
 
 # Create your views here.
-def index(request):
-    return render(request, 'store/index.html')
-
 def search(request):
     return render(request, 'store/search.html')
 

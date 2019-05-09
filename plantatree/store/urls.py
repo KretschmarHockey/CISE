@@ -3,7 +3,6 @@ from . import views
 
 app_name = 'store'
 urlpatterns = [
-    path('search_index/', views.index, name='index'),
-    path('search/', views.search, name='index'),
+    path('search/', views.search, name='search'),
     path('results/', views.SearchResultsView.as_view(), name='results'),
 ]

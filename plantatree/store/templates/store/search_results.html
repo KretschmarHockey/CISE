@@ -7,6 +7,13 @@
     <title>Search Results</title>
 </head>
 <body>
+
+
+</body>
+</html>
+
+{% extends "home/base.html" %}
+{% block content %}
     {% if results %}
         <h1>Search Results</h1>
         <ul>
@@ -17,8 +24,6 @@
             {% endfor %}
         </ul>
     {% else %}
-        <h1>There are no results</h1>
+        <h1>Could not find any items that match</h1>
     {% endif %}
-
-</body>
-</html>
+{%endblock content%}
