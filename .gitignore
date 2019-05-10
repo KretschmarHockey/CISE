@@ -8,3 +8,7 @@ include
 .vscode
 __pycache__/
 *.py[cod]
+Scripts
+lib
+tcl
+LICENSE.txt
