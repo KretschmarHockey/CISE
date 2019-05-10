@@ -5,7 +5,11 @@ import sys
 
 
 def main():
+<<<<<<< HEAD
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+=======
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'plantatree.settings')
+>>>>>>> 2nd Commit
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
