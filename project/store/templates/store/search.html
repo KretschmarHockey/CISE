@@ -1,0 +1,11 @@
+{% extends "home/base.html" %}
+{% block content %}
+
+<h1>Search Store</h1>
+
+<form action="{% url 'store:results' %}" method="get">
+    <input type="text" name="search_input" id="search-bar">
+    <input type="submit" value="Search">
+</form>
+
+{% endblock content %}
