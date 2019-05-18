@@ -2,11 +2,9 @@ from django.db import models
 
 # Create your models here.
 
-class TreeItem(models.Model):
+class ItemDescription(models.Model):
     name = models.CharField(max_length=50)
     desc = models.CharField(max_length=200)
-    height = models.IntegerField(default=-1)
-    age = models.IntegerField(default=-1)
     price = models.IntegerField(default=-1)
     picture_url = models.CharField(max_length=50)
 
@@ -15,3 +13,10 @@ class TreeItem(models.Model):
 
     def __str__(self):
         return '%s, $%.2f' % (self.name, self.price / 100)
+        
+class TreeItem(models.Model):
+    height = models.IntegerField(default=-1)
+    age = models.IntegerField(default=-1)
+    item_info = models.ForeignKey(ItemDescription,
+                on_delete=models.CASCADE)
+
