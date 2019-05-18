@@ -1,11 +1,28 @@
 {% extends "home/base.html" %}
 {% block content %}
+       
 
-<h1>Search Store</h1>
 
 <form action="{% url 'store:results' %}" method="get">
-    <input type="text" name="search_input" id="search-bar">
-    <input type="submit" value="Search">
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Filters</h2>
+            <label for="type-selection">Type</label>
+            <select name="type" id="type-selection">
+                <option value="none">---</option>
+                <option value="tool">Tool</option>
+                <option value="tree">Tree</option>
+            </select>
+        </div>
+    
+        <div class="col-md-8">
+            <h1>Search Store</h1>
+            <input type="text" name="search_input" id="search-bar">
+            <input type="submit" value="Search">
+        </div>
+    </div>
+
 </form>
 
 {% endblock content %}
