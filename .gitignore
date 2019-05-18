@@ -6,5 +6,6 @@ include
 .DS_Store
 .pyc
 .vscode
+.idea/
 __pycache__/
 *.py[cod]
