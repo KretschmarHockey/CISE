@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import TreeItem, ItemDescription
+from .models import Tree
 
 # Register your models here.
-admin.site.register(TreeItem)
-admin.site.register(ItemDescription)
+admin.site.register(Tree)

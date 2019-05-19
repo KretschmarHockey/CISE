@@ -12,18 +12,17 @@
 </body>
 </html>
 
-{% extends "home/base.html" %}
-{% block content %}
+{% extends "store/search.html" %}
+{% block results %}
     {% if results %}
-        <h1>Search Results</h1>
-        <ul>
+        <div class="list-group">
             {% for item in results %}
-                <li>
-                    {{ item.name }}
-                </li>
+                <a href="{% url 'store:product' item.data.pk %}" class="list-group-item list-group-item-action">
+                    {{ item.display }}
+                </a>
             {% endfor %}
-        </ul>
+        </div>
     {% else %}
-        <h1>Could not find any items that match</h1>
+        <p>There are no items that match your search</p>
     {% endif %}
-{%endblock content%}
+{% endblock results %}

@@ -1,11 +1,90 @@
 {% extends "home/base.html" %}
 {% block content %}
-
-<h1>Search Store</h1>
-
 <form action="{% url 'store:results' %}" method="get">
-    <input type="text" name="search_input" id="search-bar">
-    <input type="submit" value="Search">
+
+    <div class="row">
+        <div class="col-md-4 content-section form-group">
+            <h2>Filters</h2>
+            <label for="type">Tree Type</label>
+            <select name="type" id="type" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value="fruit">Fruit Tree</option>
+                <option value="hedge">Hedge</option>
+                <option value="evergreen">Evergreen</option>
+                <option value="nznative">NZ Native</option>
+                <option value="gumtree">Gum Tree</option>
+                <option value="palmtree">Palm Tree</option>
+                <option value="hardwood">Hardwood</option>
+            </select>
+            <br>
+            <label for="soil">Soil Drainage</label>
+            <select name="soil" id="soil" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value="H">Fast</option>
+                <option value="M">Medium</option>
+                <option value="L">Slow</option>
+            </select>
+            <br>
+            <label for="sun">Sun Conditions</label>
+            <select name="sun" id="sun" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value="H">Sunny</option>
+                <option value="M">Medium</option>
+                <option value="L">Shade</option>
+            </select>
+            <br>
+            <label for="food">Feeding Maintenance</label>
+            <select name="food" id="food" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value="H">High</option>
+                <option value="M">Medium</option>
+                <option value="L">Low</option>
+            </select>
+            <br>
+            <label for="water">Watering Maintenance</label>
+            <select name="water" id="water" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value="H">High</option>
+                <option value="M">Medium</option>
+                <option value="L">Low</option>
+            </select>
+            <br>
+            <label for="pruning">Pruning Maintenance</label>
+            <select name="pruning" id="pruning" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value="H">High</option>
+                <option value="M">Medium</option>
+                <option value="L">Low</option>
+            </select>
+            <br>
+            <label for="height">Max Height</label>
+            <select name="height" id="height" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value=">1">>1m</option>
+                <option value="1-2">1-2m</option>
+                <option value="2-3">2-3m</option>
+                <option value="<3"><3m</option>
+            </select>
+            <br>
+            <label for="growth">Growth Rate</label>
+            <select name="growth" id="growth" class="input-sm form-control">
+                <option value="none">---</option>
+                <option value="H">High</option>
+                <option value="M">Medium</option>
+                <option value="L">Low</option>
+            </select>
+            <br>
+            <label for="price">Max Price</label>
+            <input type="number" id="price" name="price" class="input-sm form-control">
+        </div>
+        <div class="col-lg-8">
+            <h1>Search Store</h1>
+            <input type="text" name="search_input" id="search-bar">
+            <input type="submit" value="Search">
+            {% block results %}{% endblock results %}
+        </div>
+    </div>
+
 </form>
 
 {% endblock content %}

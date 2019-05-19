@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plant a Tree</title>
+</head>
+    {% extends 'home/base.html' %}
+    {% block content %}
+    <div class="list-group">
+        <p class="list-group-item">
+            {{ context.name }}
+        </p>
+        <p class="list-group-item">
+            {{ context.description }}
+        </p>
+        <p class="list-group-item">
+            {{ context.price_str }}
+        </p>
+    </div>
+<form action="" method="post">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="age">Age</label>
+        <input class="form-control col-sm-8" type="number" name="age" id="age" placeholder="Enter Preferred Age">
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="height">Height</label>
+        <input class="form-control col-sm-8" type="number" name="height" id="height" placeholder="Enter Preferred Height">
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="quantity">Quantity:</label>
+        <input class="form-control col-sm-8" type="number" name="quantity" id="quantity"
+               placeholder="Enter Desired Quantity">
+    </div>
+</form>
+    {% endblock content %}
+</html>
