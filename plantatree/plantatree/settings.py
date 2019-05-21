@@ -131,3 +131,5 @@ django_heroku.settings(locals())
 
 # ssl issue fix
 del DATABASES['default']['OPTIONS']['sslmode']
+
+LOGIN_REDIRECT_URL = 'home-home'
