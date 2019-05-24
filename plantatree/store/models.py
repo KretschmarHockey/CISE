@@ -19,7 +19,7 @@ class Tree(models.Model):
     price = models.IntegerField(default=-1)
 
     def price_str(self):
-        return '$%s' % (format(self.price / 100, ',.2f'))
+        return f'{format(self.price / 100, ",.2f")}'
 
     def __str__(self):
-        return '%s, $%.2f' % (self.name, self.price / 100)
+        return f'{self.name}, {self.price_str()}'
