@@ -18,6 +18,9 @@ class Tree(models.Model):
     growth_rate = models.CharField(max_length=1)
     price = models.IntegerField(default=-1)
 
+    def price_int(self):
+        return self.price / 100
+
     def price_str(self):
         return f'{format(self.price / 100, ",.2f")}'
 
